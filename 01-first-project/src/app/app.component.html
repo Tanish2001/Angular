@@ -1,0 +1,16 @@
+<!-- // string interpolation -->
+<h1>Inside App Component: {{name}}</h1>
+
+
+<!-- // property binding -->
+<a [href]="linkURL">Click</a>
+
+<div>
+  <button (click)= "incrementCounter()">Increment</button>
+  <button (click)= "decrementCounter()" >Decrement</button>
+  <p>Value of counter is {{counter}}</p>
+  <input type="text" [(ngModel)]="inputValue">
+  <h1>{{inputValue}}</h1>
+  <button id="btn1">Click me</button>
+</div>
+

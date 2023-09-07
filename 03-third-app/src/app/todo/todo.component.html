@@ -1,0 +1,40 @@
+<p>todo works!</p>
+<div class="container">
+    <table class="table table-striped-columns">
+        <thead>
+            <tr><th>ID</th>
+            <th>Task Name</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks">
+                <th>{{task.id}}</th>
+                <th>{{task.value}}</th>
+                <button class="btn btn-success btn-sm m-3" (click)="complete(task.id)">Completed</button>
+                <button class="btn btn-danger btn-sm m-3" (click)="deleteTask(task.id)">Delete</button>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="input-group">
+        <span class="input-group-text">Task Name</span>
+        <input type="text" #box class="form-control">
+    </div>
+    <br>
+    <button type="button" class="btn btn-success" (click)="addTask(box.value)">Add Task</button>
+</div>
+
+<div class="container">
+    <table class="table table-striped-columns">
+        <thead>
+            <tr><th>ID</th>
+            <th>Task Name</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of completedTask">
+                <th>{{task.id}}</th>
+                <th>{{task.value}}</th>
+                <button type="button" class="btn btn-danger btn-sm m-3" (click)="deleteTaskFromComplete(task.id)">Delete</button>
+            </tr>
+        </tbody>
+    </table>
+</div>

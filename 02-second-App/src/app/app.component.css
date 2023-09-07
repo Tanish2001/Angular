@@ -1,0 +1,22 @@
+img{
+   width: 500px;
+   height: 300px; 
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+}
+
+#div1{
+    /* display: block; */
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.btnClass{
+    margin-left: auto;
+    margin-right: auto;
+    /* display: ; */
+}
+

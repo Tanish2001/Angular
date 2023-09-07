@@ -1,0 +1,90 @@
+<p>child works!</p>
+<div class="card" style="width: 18rem;">
+    <img src="https://source.unsplash.com/random/?car,super car" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">My Car</h5>
+        <p class="card-text">My gud car</p>
+        <a href="#" class="btn btn-success">Dont Go</a>
+    </div>
+</div>
+
+<div *ngIf="show ,else elseBlock">Rendered since condition is true</div>
+<ng-template #elseBlock>hi i am false</ng-template>
+
+<hr>
+
+<div *ngIf="show , then showMore , else stop">Hi friend</div>
+<ng-template #showMore>Hello my friendo, this is the endo</ng-template>
+<ng-template #stop>Goodbye friendo</ng-template>
+
+<hr>
+
+<ng-template [ngIf]="color=='red'">
+    <h1 style="color: red;">I am red</h1>
+</ng-template>
+<ng-template [ngIf]="color=='blue'">
+    <h1 style="color: blue;">I am blue</h1>
+</ng-template>
+<ng-template [ngIf]="color=='green'">
+    <h1 style="color: green;">I am green</h1>
+</ng-template>
+
+<div *ngIf="color=='red'">
+    <h1 style="color: red;">This is red2</h1>
+</div>
+
+<div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="color: red;">This is switch in red</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;">This is switch in blue</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green;">This is switch in green</h1>
+    <h1 *ngSwitchDefault style="color: brown;">this is default case</h1>
+</div>
+
+<div>
+    <ul>
+        <li *ngFor="let player of players">{{player}}</li>
+    </ul>
+</div>
+
+<div>
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <th>{{student.id}}</th>
+                <th>{{student.FirstName}}</th>
+                <th>{{student.LastName}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <table class="table table-striped-columns">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Task Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks">
+                <th (click)="remove(task.id)">{{task.id}}</th>
+                <th (click)="remove(task.id)">{{task.value}}</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="input-group">
+        <span class="input-group-text">Task Name</span>
+        <input type="text" #box class="form-control">
+    </div>
+    <br>
+    <button type="button" class="btn btn-success btn-lg" (click)="addTask(box.value)">Add Task</button>
+</div>
