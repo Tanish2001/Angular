@@ -1,0 +1,8 @@
+<p>movies works!</p>
+<app-input-movies (outMovie)="getMovies($event)" (outMovieDes)="getMovieDes($event)"></app-input-movies>
+<!-- <h1>{{text}}</h1> -->
+<!-- <p>{{text1}}</p> -->
+
+<!-- <p *ngFor="let movie of movieList">{{movie.name}} - {{movie.description}}</p> -->
+
+<app-display-movies *ngFor="let movie of movieList; let i=index" [xyz]="movie" [counter]="i"></app-display-movies>

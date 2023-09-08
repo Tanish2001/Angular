@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var circles_1 = require("./circles");
+var rectangle_1 = require("./rectangle");
+var r1 = new rectangle_1.Rectangle(1, 2, 3, 4);
+console.log(r1.getInfo());
+console.log("Area is" + r1.calculateArea());
+var c1 = new circles_1.Circle(6, 9, 99);
+console.log(c1.getInfo());
+console.log("Area is " + c1.calculateArea());

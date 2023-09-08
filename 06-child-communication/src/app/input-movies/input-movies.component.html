@@ -1,0 +1,13 @@
+<p>input-movies works!</p>
+
+<div class="container">
+    <div class="input-group">
+        <span class="input-group-text">Moive name</span>
+        <textarea class="form-control" aria-label="With textarea" #movie></textarea>
+      </div>
+          <div class="input-group">
+        <span class="input-group-text">Description<i class="fa fa-audio-description" aria-hidden="true"></i></span>
+        <textarea class="form-control" aria-label="With textarea" #description></textarea>
+      </div>
+    <button class="btn btn-success" (click)="submit(movie.value,description.value)">Submit</button>
+</div>
