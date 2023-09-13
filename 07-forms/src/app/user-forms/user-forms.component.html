@@ -1,0 +1,28 @@
+<p>user-form works!</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="mb-3">
+        <label for="username" class="form-label">UserName</label>
+        <div id="emailHelp" class="form-text">Ente your user name</div>
+        <input type="email" class="form-control {{border}}" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel
+            name="userName" required #username="ngModel" minlength="3" pattern="^[a-zA-Z\s]*$">
+    </div>
+    <span class="form-text" *ngIf="username.touched && username.invalid && username.errors?.['required']">Username is
+        required</span>
+    <span class="form-text" *ngIf="username.errors?.['minlength']">Minimum length is 3</span>
+    <br>
+    <span class="form-text" *ngIf="username.errors?.['pattern']">Only characters</span>     
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel
+            name="email">
+        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <select name="selectoption" id="" class="form-select" ngModel name="option">
+        <option selected>Select the option</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <br>
+    <button [disabled]="f.status=='INVALID'" type="submit" class="btn btn-primary">Submit</button>
+</form>

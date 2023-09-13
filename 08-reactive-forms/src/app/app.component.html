@@ -1,0 +1,47 @@
+<h1>Reactive Form</h1>
+<p>user-form works!</p>
+
+<div class="container" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <form>
+    <div class="mb-3">
+      <label for="username" class="form-label">UserName</label>
+      <div id="emailHelp" class="form-text">Ente your user name</div>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username">
+    </div>
+    <div *ngIf="userForm.get('username')?.hasError('minlength') && userForm.get('username')?.touched; else box">
+      <span class="form-text">enter a valid username of 6</span>
+    </div>
+    <ng-template #box>
+      <span class="form-text">Enter a valid username</span>
+    </ng-template>
+    <!-- <span class="form-text" *ngIf="!userForm.get('username')?.valid && userForm.get('username')?.touched">Enter a valid username</span> <br>
+    <span class="form-text" *ngIf="userForm.get('username')?.hasError('minlength') && userForm.get('username')?.touched">Enter a valid username of 6</span> -->
+    <!-- <span class="form-text" *ngIf="username.touched && username.invalid && username.errors?.['required']">Username is
+        required</span> -->
+    <!-- <span class="form-text" *ngIf="username.errors?.['minlength']">Minimum length is 3</span> -->
+    <br>
+    <!-- <span class="form-text" *ngIf="username.errors?.['pattern']">Only characters</span>      -->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <select name="selectoption" id="" class="form-select" ngModel formControlName="number">
+      <option selected>Select the option</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <br>
+
+    <div class="radio" *ngFor="let gender of genders">
+      <label>
+        <input type="radio" name="gender" [value]="gender" formControlName="gender">{{gender}}</label>
+    </div>
+
+    <br>
+    <button [disabled]="!userForm.valid" type="submit" class="btn btn-primary">Submit</button>
+    <button class="btn btn-danger reset" (click)="resetForm()">Reset</button>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+.reset{
+    margin-left: 5px;
+}
+input.ng-invalid.ng-touched{
+    border-width: 1px;
+    border: red;
+    border-style: groove;
+}
